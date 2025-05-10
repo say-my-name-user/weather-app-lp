@@ -1,3 +1,19 @@
 body {
-    background-color: skyblue;
+    font-family: monospace, sans-serif, Arial;
+    font-size: large;
+}
+
+input,
+button {
+    font-family: monospace, sans-serif, Arial;
+    font-size: medium;
+    margin-bottom: 20px;
+}
+
+.weather-details {
+    color: darkgreen;
+}
+
+.error-message {
+    color: darkred;
 }

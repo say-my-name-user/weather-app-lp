@@ -1,10 +1,17 @@
 monolog:
     channels:
         - deprecation # Deprecations are logged in the dedicated "deprecation" channel when it exists
+        - weather_api
 
 when@dev:
     monolog:
         handlers:
+            weather_api:
+                type: stream
+                path: "%kernel.logs_dir%/weather_api.log"
+                level: info
+                channels: [ "weather_api" ]
+                formatter: weather_monolog_formatter
             main:
                 type: stream
                 path: "%kernel.logs_dir%/%kernel.environment%.log"

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Weather App{% endblock %}
+
+{% block body %}
+    <div class="weather-wrapper">
+        {% if weather is defined and weather %}
+            <h1>Current weather in {{ weather.city }}, {{ weather.country }}:</h1>
+
+            <div class="weather-details">
+                <p>Temperature: <b>{{ weather.temperature }}°C</b></p>
+                <p>Condition: <b>{{ weather.condition }}</b></p>
+                <p>Humidity: <b>{{ weather.humidity }}%</b></p>
+                <p>Wind speed: <b>{{ weather.windSpeed }} km/h</b></p>
+                <p>Last updated: <b>{{ weather.lastUpdated|date('d-M-Y H:i') }}</b></p>
+            </div>
+        {% endif %}
+
+        <a href="{{ path('weather_form') }}">&larr; Back to form</a>
+    </div>
+{% endblock %}

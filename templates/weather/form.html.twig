@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Weather App{% endblock %}
+
+{% form_theme form 'weather/form/custom_form_errors.html.twig' %}
+
+{% block body %}
+    <div class="weather-form-wrapper">
+        <h1>Enter your city:</h1>
+
+        {% include 'weather/form/custom_errors.html.twig' with {'errors': errors} %}
+
+        {{ form(form) }}
+    </div>
+{% endblock %}
